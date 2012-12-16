@@ -12,8 +12,8 @@ point2 = false;
 point3 = false;
 point4 = false;
 enemies = [];
-playerSpeed = 10;
-playerJump = 8;
+playerSpeed = 9;
+playerJump = 7;
 
   // The loading screen that will display while our assets load
   Crafty.scene("loading", function() {
@@ -246,7 +246,7 @@ var platform2 = createPlatform('rgb(0,255,0)',850,170,150,20);
 var platform3 = createPlatform('rgb(0,255,0)',1700,300,150,20);
 var platform4 = createPlatform('rgb(0,255,0)',2015,170,150,20);
 var platform5 = createPlatform('rgb(0,255,0)',2775,170,150,20);
-var platform6 = createPlatform('rgb(0,255,0)',4115,300,150,120);
+var platform6 = createPlatform('rgb(0,255,0)',4115,300,150,20);
 var platform7 = createPlatform('rgb(0,255,0)',4410,240,150,20);
 var platform8 = createPlatform('rgb(0,255,0)',4975,300,100,20);
 var platform9 = createPlatform('rgb(0,255,0)',5200,170,100,20);
@@ -269,21 +269,21 @@ var enemy1 = createEnemy('ud', 200, 'rgb(255,0,0)',1940,230,40,40);
 var enemy2 = createEnemy('ud', 200, 'rgb(255,0,0)',2360,320,40,40);
 var enemy3 = createEnemy('ud', 200, 'rgb(255,0,0)',2610,320,40,40);
 var enemy4 = createEnemy('ud', 200, 'rgb(255,0,0)',3370,320,40,40);
-var enemy5 = createEnemy('ud', 200, 'rgb(255,0,0)',3500,320,40,40);
+var enemy5 = createEnemy('ud', 330, 'rgb(255,0,0)',3500,270,40,40);
 var enemy6 = createEnemy('ud', 200, 'rgb(255,0,0)',3620,320,40,40);
-var enemy7 = createEnemy('ud', 200, 'rgb(255,0,0)',4170,370,40,40);
-var enemy8 = createEnemy('ud', 200, 'rgb(255,0,0)',4310,220,40,40);
+var enemy7 = createEnemy('lr', 200, 'rgb(255,0,0)',4170,395,40,40);
+var enemy8 = createEnemy('ud', 150, 'rgb(255,0,0)',4310,220,40,40);
 var enemy9 = createEnemy('ud', 200, 'rgb(255,0,0)',4800,320,40,40);
 var enemy10 = createEnemy('ud', 200, 'rgb(255,0,0)',5410,90,40,40);
-var enemy11 = createEnemy('ud', 200, 'rgb(255,0,0)',6410,400,40,40);
-var enemy12 = createEnemy('ud', 200, 'rgb(255,0,0)',6530,320,40,40);
-var enemy13 = createEnemy('ud', 200, 'rgb(255,0,0)',6650,230,40,40);
-var enemy14 = createEnemy('ud', 200, 'rgb(255,0,0)',6650,400,40,40);
-var enemy15 = createEnemy('ud', 200, 'rgb(255,0,0)',6780,320,40,40);
-var enemy16 = createEnemy('ud', 200, 'rgb(255,0,0)',6910,230,40,40);
-var enemy17 = createEnemy('ud', 200, 'rgb(255,0,0)',6910,400,40,40);
-var enemy18 = createEnemy('ud', 200, 'rgb(255,0,0)',7030,320,40,40);
-var enemy19 = createEnemy('ud', 200, 'rgb(255,0,0)',7920,170,40,40);
+var enemy11 = createEnemy('ud', 100, 'rgb(255,0,0)',6410,390,40,40);
+var enemy12 = createEnemy('ud', 200, 'rgb(255,0,0)',6530,330,40,40);
+var enemy13 = createEnemy('ud', 300, 'rgb(255,0,0)',6650,230,40,40);
+var enemy14 = createEnemy('ud', 100, 'rgb(255,0,0)',6650,390,40,40);
+var enemy15 = createEnemy('ud', 200, 'rgb(255,0,0)',6780,330,40,40);
+var enemy16 = createEnemy('ud', 300, 'rgb(255,0,0)',6910,240,40,40);
+var enemy17 = createEnemy('ud', 100, 'rgb(255,0,0)',6910,390,40,40);
+var enemy18 = createEnemy('ud', 200, 'rgb(255,0,0)',7030,330,40,40);
+var enemy19 = createEnemy('ud', 300, 'rgb(255,0,0)',7960,270,40,40);
 var enemy20 = createEnemy('ud', 200, 'rgb(255,0,0)',9060,340,40,40);
 var enemy21 = createEnemy('ud', 200, 'rgb(255,0,0)',9720,340,40,40);
 		
@@ -343,8 +343,8 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision")
 					tranny_color1 = 'rgb(255,255,255)';
 					tranny1.color(tranny_color1);
 					point1 = true;
-					playerSpeed = 2;
-					playerJump = 2;
+					playerSpeed = 8;
+					playerJump = 6;
 					console.log(playerJump);
 					sherwood.twoway(playerSpeed, -3);
 					Crafty.audio.play("level1", -1);
@@ -358,6 +358,8 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision")
 					tranny_color2 = 'rgb(255,255,255)';
 					tranny2.color(tranny_color2);
 					point2 = true;
+					playerSpeed = 6;
+					playerJump = 4;
 					Crafty.audio.stop("level1");
 					Crafty.audio.play("level2", -1);
 				}
@@ -369,6 +371,8 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision")
 					tranny_color3 = 'rgb(255,255,255)';
 					tranny3.color(tranny_color3);
 					point3 = true;
+					playerSpeed = 4;
+					playerJump = 2;
 					Crafty.audio.stop("level2");
 					Crafty.audio.play("level3", -1);
 					Crafty.audio.play("breathing", -1);
