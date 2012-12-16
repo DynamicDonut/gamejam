@@ -299,6 +299,17 @@ var enemy18 = createEnemy('ud', 200, 'rgb(255,0,0)',7030,330,40,40);
 var enemy19 = createEnemy('ud', 300, 'rgb(255,0,0)',7960,270,40,40);
 var enemy20 = createEnemy('ud', 200, 'rgb(255,0,0)',9060,340,40,40);
 var enemy21 = createEnemy('ud', 200, 'rgb(255,0,0)',9720,340,40,40);
+//------------------Hazards---------------------//
+var hazard1 = createHazard('rgb(255,0,0)',260,440,140,20);
+var hazard2 = createHazard('rgb(255,0,0)',1110,440,140,20);
+var hazard3 = createHazard('rgb(255,0,0)',1700,440,465,20);
+var hazard4 = createHazard('rgb(255,0,0)',2445,440,140,20);
+var hazard5 = createHazard('rgb(255,0,0)',3850,440,140,20);
+var hazard6 = createHazard('rgb(255,0,0)',4745,440,140,20);
+var hazard7 = createHazard('rgb(255,0,0)',5200,440,350,20);
+var hazard8 = createHazard('rgb(255,0,0)',5900,440,290,20);
+var hazard9 = createHazard('rgb(255,0,0)',7675,440,580,20);
+var hazard10 = createHazard('rgb(255,0,0)',10355,440,645,20);
 		
 var tranny1 = Crafty.e("tranny1, 2D, DOM, Color, Collision")
 	.color(tranny_color1)
