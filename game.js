@@ -205,39 +205,72 @@ var ground = Crafty.e("platform, 2D, DOM, Collision, Color")
     .onHit("Player", function(obj){
 	    hit = true;
     });
-    
-var p1 = createPlatform('rgb(0,255,0)', 100, 100, 100, 10);
-var p2 = createPlatform('rgb(0,255,0)', 140, 200, 100, 10);
-var p3 = createPlatform('rgb(0,255,0)', 500, 100, 100, 30);
-var p4 = createPlatform('rgb(0,255,0)', 840, 200, 10, 30);
-var enemy1 =  createEnemy('ud', 200, 'rgb(255,0,0)', 300, 100, 20, 20);
-var enemy2 =  createEnemy('lr', 100, 'rgb(255,0,0)', 200, 200, 20, 20);
-var enemy3 =  createEnemy('lr', 200, 'rgb(255,0,0)', 200, 300, 20, 20);
-var enemy4 =  createEnemy('ud', 100, 'rgb(255,0,0)', 200, 400, 20, 20);
-var enemy5 =  createEnemy('lr', 200, 'rgb(255,0,0)', 400, 100, 20, 20);
-var enemy6 =  createEnemy('lr', 100, 'rgb(255,0,0)', 400, 200, 20, 20);
-var enemy7 =  createEnemy('ud', 200, 'rgb(255,0,0)', 400, 300, 20, 20);
-var enemy8 =  createEnemy('lr', 100, 'rgb(255,0,0)', 400, 400, 20, 20);
+ //-------------Platform---------------------//   
+var platform1 = createPlatform('rgb(0,255,0)',500,300,150,20);
+var platform2 = createPlatform('rgb(0,255,0)',850,170,150,20);
+var platform3 = createPlatform('rgb(0,255,0)',1700,300,150,20);
+var platform4 = createPlatform('rgb(0,255,0)',2015,170,150,20);
+var platform5 = createPlatform('rgb(0,255,0)',2775,170,150,20);
+var platform6 = createPlatform('rgb(0,255,0)',4115,300,150,120);
+var platform7 = createPlatform('rgb(0,255,0)',4410,240,150,20);
+var platform8 = createPlatform('rgb(0,255,0)',4975,300,100,20);
+var platform9 = createPlatform('rgb(0,255,0)',5200,170,100,20);
+var platform10 = createPlatform('rgb(0,255,0)',5550,240,100,20);
+var platform11 = createPlatform('rgb(0,255,0)',6000,380,100,20);
+var platform12 = createPlatform('rgb(0,255,0)',7575,380,100,20);
+var platform13 = createPlatform('rgb(0,255,0)',7855,260,100,20);
+var platform14 = createPlatform('rgb(0,255,0)',8020,220,100,20);
+var platform15 = createPlatform('rgb(0,255,0)',8020,360,100,20);
+var platform16 = createPlatform('rgb(0,255,0)',8175,300,40,20);
+var platform17 = createPlatform('rgb(0,255,0)',10315,440,40,20);
+var platform18 = createPlatform('rgb(0,255,0)',10355,410,40,20);
+var platform19 = createPlatform('rgb(0,255,0)',10405,375,40,20);
+var platform20 = createPlatform('rgb(0,255,0)',10455,350,40,20);
+var platform21 = createPlatform('rgb(0,255,0)',10505,320,40,20);
+var platform22 = createPlatform('rgb(0,255,0)',10555,290,40,20);
+var platform23 = createPlatform('rgb(0,255,0)',10625,260,265,20);
+//-------------Enemies---------------------//
+var enemy1 = createEnemy('ud', 200, 'rgb(255,0,0)',1940,230,40,40);
+var enemy2 = createEnemy('ud', 200, 'rgb(255,0,0)',2360,320,40,40);
+var enemy3 = createEnemy('ud', 200, 'rgb(255,0,0)',2610,320,40,40);
+var enemy4 = createEnemy('ud', 200, 'rgb(255,0,0)',3370,320,40,40);
+var enemy5 = createEnemy('ud', 200, 'rgb(255,0,0)',3500,320,40,40);
+var enemy6 = createEnemy('ud', 200, 'rgb(255,0,0)',3620,320,40,40);
+var enemy7 = createEnemy('ud', 200, 'rgb(255,0,0)',4170,370,40,40);
+var enemy8 = createEnemy('ud', 200, 'rgb(255,0,0)',4310,220,40,40);
+var enemy9 = createEnemy('ud', 200, 'rgb(255,0,0)',4800,320,40,40);
+var enemy10 = createEnemy('ud', 200, 'rgb(255,0,0)',5410,90,40,40);
+var enemy11 = createEnemy('ud', 200, 'rgb(255,0,0)',6410,400,40,40);
+var enemy12 = createEnemy('ud', 200, 'rgb(255,0,0)',6530,320,40,40);
+var enemy13 = createEnemy('ud', 200, 'rgb(255,0,0)',6650,230,40,40);
+var enemy14 = createEnemy('ud', 200, 'rgb(255,0,0)',6650,400,40,40);
+var enemy15 = createEnemy('ud', 200, 'rgb(255,0,0)',6780,320,40,40);
+var enemy16 = createEnemy('ud', 200, 'rgb(255,0,0)',6910,230,40,40);
+var enemy17 = createEnemy('ud', 200, 'rgb(255,0,0)',6910,400,40,40);
+var enemy18 = createEnemy('ud', 200, 'rgb(255,0,0)',7030,320,40,40);
+var enemy19 = createEnemy('ud', 200, 'rgb(255,0,0)',7920,170,40,40);
+var enemy20 = createEnemy('ud', 200, 'rgb(255,0,0)',9060,340,40,40);
+var enemy21 = createEnemy('ud', 200, 'rgb(255,0,0)',9720,340,40,40);
 /* var enemies = [enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8]; */
 	
 var tranny1 = Crafty.e("tranny1, 2D, DOM, Color, Collision")
 	.color(tranny_color1)
-	.attr({x: 600, y: 440, w: 20, h: 20})
+	.attr({x: 2830, y: 130, w: 20, h: 20})
 	.collision();
 
 var tranny2 = Crafty.e("tranny2, 2D, DOM, Color, Collision")
 	.color(tranny_color2)
-	.attr({x: 700, y: 440, w: 20, h: 20})
+	.attr({x: 5585, y: 200, w: 20, h: 20})
 	.collision();
 
 var tranny3 = Crafty.e("tranny3, 2D, DOM, Color, Collision")
 	.color(tranny_color3)
-	.attr({x: 800, y: 440, w: 20, h: 20})
+	.attr({x: 8300, y: 420, w: 20, h: 20})
 	.collision();
 	
 var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision")
 	.color(tranny_color4)
-	.attr({x: 900, y: 440, w: 20, h: 20})
+	.attr({x: 10780, y: 220, w: 20, h: 20})
 	.collision();
     
 var sherwood = Crafty.e("Player, 2D, DOM, Color, Gravity, Twoway, Controls, Collision, walkleft, walkright, SpriteAnimation")
