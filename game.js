@@ -19,7 +19,7 @@ playerJump = 8;
   Crafty.scene("loading", function() {
   console.log('loading');
     // Load takes an array of assets and a callback when complete
-    Crafty.load(["player.jpg"], function() {
+    Crafty.load(["player.png"], function() {
       Crafty.scene("title"); //when everything is loaded, run the main scene
     });
     
@@ -66,6 +66,7 @@ playerJump = 8;
   });
   
   Crafty.scene("main", function() {
+  	reset();
 	Crafty.background('rgb(127,127,127)');
 	Crafty.audio.add({
 		breathing: ["audio/breathing.wav", "audio/breathing.mp3", "audio/breathing.ogg"],
@@ -85,7 +86,18 @@ playerJump = 8;
 	var bg = Crafty.e("2D, DOM, Image")
              .attr({w: 11000, h: Crafty.viewport.height, x: -1100})
              .image("cave1.png", "repeat");
-             
+    function reset(){
+	    tranny_color1 = 'rgb(255,0,255)';
+		tranny_color2 = 'rgb(255,0,255)';
+		tranny_color3 = 'rgb(255,0,255)';
+		tranny_color4 = 'rgb(255,0,255)';
+		point1 = false;
+		point2 = false;
+		point3 = false;
+		point4 = false;
+		playerSpeed = 10;
+		playerJump = 8;
+    }
     function createPlatform(rgb, x, y, w, h){
 		if(!rgb){
 			rgb = 'rgb(0,0,0)';
@@ -102,10 +114,35 @@ playerJump = 8;
 		if(!w){
 			w = 100;
 		}
-		var p = Crafty.e("platform, 2D, DOM, Color, Collision")
+		var p = Crafty.e("platform, 2D, DOM, Color, Collision, Image")
 	    .color(rgb)
 	    .attr({ x: x, y: y, w: w, h: h })
 	    .collision();
+
+	    return p;
+	}
+	
+	function createHazard(rgb, x, y, w, h){
+		if(!rgb){
+			rgb = 'rgb(0,0,0)';
+		}
+		if(!h){
+			h = w;
+		}
+		if(!x){
+			x = 0;
+		}
+		if(!y){
+			y = 0;
+		}
+		if(!w){
+			w = 100;
+		}
+		var p = Crafty.e("hazard, 2D, DOM, Color, Collision, Image")
+	    .color(rgb)
+	    .attr({ x: x, y: y, w: w, h: h })
+	    .collision();
+
 	    return p;
 	}
 	
@@ -189,7 +226,7 @@ playerJump = 8;
 	    return enemy;
 	}
 	
-	var playerSprite = Crafty.sprite(60, 60, "player.jpg", {
+	var playerSprite = Crafty.sprite(60, 60, "player.png", {
 	    walkleft: [0, 0, 60, 60],
 	    wakright: [0, 1, 60, 60]
 	});
@@ -201,7 +238,8 @@ playerJump = 8;
 	    .onHit("Player", function(obj){
 		    hit = true;
 	    });
-	    
+
+var hazard = createHazard('rgb(255,0,0)',500,450,150,20);	    
  //-------------Platform---------------------//   
 var platform1 = createPlatform('rgb(0,255,0)',500,300,150,20);
 var platform2 = createPlatform('rgb(0,255,0)',850,170,150,20);
@@ -283,8 +321,8 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision")
 		  })
 	    .gravity("platform")
 	    .gravityConst(.1)
-	    .animate('walk_left', 0, 0, 6)
-	    .animate('walk_right', 0, 1, 3)
+	    .animate('walk_left', 0, 0, 9)
+	    .animate('walk_right', 0, 1, 9)
 	    .twoway(playerSpeed, playerJump)// 1=1, 1.2=5 2=15, 3=50, 4=80, 5=120
 	    .collision()
 	    .bind('EnterFrame', function () {
@@ -351,6 +389,11 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision")
 		})
 		.onHit('enemy', function(ent){
 			console.log("You're hurting me!!!");
+			Crafty.scene("dead");
+		})
+		
+		.onHit('hazard', function(ent){
+			console.log("This is hazardous to your health wakka wakka wakka!!!");
 			Crafty.scene("dead");
 		});
 	
