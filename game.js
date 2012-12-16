@@ -84,7 +84,7 @@ playerJump = 7;
 	});
 	Crafty.audio.play("start", -1);
 	var bg = Crafty.e("2D, DOM, Image")
-             .attr({w: 11000, h: Crafty.viewport.height, x: -1100})
+             .attr({w: 12100, h: Crafty.viewport.height, x: 0})
              .image("cave1.png", "repeat");
     function reset(){
 	    tranny_color1 = 'rgb(255,0,255)';
@@ -114,9 +114,22 @@ playerJump = 7;
 		if(!w){
 			w = 100;
 		}
+		var plattype = 'bould';
+		var platw = w;
+		var plat;
+		if(point2){
+			plattype = 'cave'
+		}
+		if(w==40 || w==100 || w==140 || w==265){
+			plat = plattype + "_plat_" + w + ".png";
+		} else {
+			plat = "WRONG";
+		}
+		console.log(plat);
 		var p = Crafty.e("platform, 2D, DOM, Color, Collision, Image")
 	    .color(rgb)
 	    .attr({ x: x, y: y, w: w, h: h })
+	    .image(plat)
 	    .collision();
 
 	    return p;
@@ -241,13 +254,13 @@ playerJump = 7;
 
 var hazard = createHazard('rgb(255,0,0)',500,450,150,20);	    
  //-------------Platform---------------------//   
-var platform1 = createPlatform('rgb(0,255,0)',500,300,150,20);
-var platform2 = createPlatform('rgb(0,255,0)',850,170,150,20);
-var platform3 = createPlatform('rgb(0,255,0)',1700,300,150,20);
-var platform4 = createPlatform('rgb(0,255,0)',2015,170,150,20);
-var platform5 = createPlatform('rgb(0,255,0)',2775,170,150,20);
-var platform6 = createPlatform('rgb(0,255,0)',4115,300,150,20);
-var platform7 = createPlatform('rgb(0,255,0)',4410,240,150,20);
+var platform1 = createPlatform('rgb(0,255,0)',500,300,140,20);
+var platform2 = createPlatform('rgb(0,255,0)',850,170,140,20);
+var platform3 = createPlatform('rgb(0,255,0)',1700,300,140,20);
+var platform4 = createPlatform('rgb(0,255,0)',2015,170,140,20);
+var platform5 = createPlatform('rgb(0,255,0)',2775,170,140,20);
+var platform6 = createPlatform('rgb(0,255,0)',4115,300,140,20);
+var platform7 = createPlatform('rgb(0,255,0)',4410,240,140,20);
 var platform8 = createPlatform('rgb(0,255,0)',4975,300,100,20);
 var platform9 = createPlatform('rgb(0,255,0)',5200,170,100,20);
 var platform10 = createPlatform('rgb(0,255,0)',5550,240,100,20);
@@ -349,6 +362,7 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision")
 					sherwood.twoway(playerSpeed, -3);
 					Crafty.audio.play("level1", -1);
 					Crafty.audio.stop("start");
+					bg.image("cave2.png", "repeat");
 				}
 			});
 		})
@@ -362,6 +376,7 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision")
 					playerJump = 4;
 					Crafty.audio.stop("level1");
 					Crafty.audio.play("level2", -1);
+					bg.image("cave3.png", "repeat");
 				}
 			});
 		})
@@ -376,6 +391,7 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision")
 					Crafty.audio.stop("level2");
 					Crafty.audio.play("level3", -1);
 					Crafty.audio.play("breathing", -1);
+					bg.image("cave4.png", "repeat");
 				}
 			});
 		})
@@ -392,8 +408,10 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision")
 			});
 		})
 		.onHit('enemy', function(ent){
+/*
 			console.log("You're hurting me!!!");
 			Crafty.scene("dead");
+*/
 		})
 		
 		.onHit('hazard', function(ent){
