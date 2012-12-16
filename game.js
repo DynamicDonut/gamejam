@@ -19,7 +19,7 @@ playerJump = 7;
   Crafty.scene("loading", function() {
   console.log('loading');
     // Load takes an array of assets and a callback when complete
-    Crafty.load(["player.png"], function() {
+    Crafty.load(["player.png, bould_plat_40.png, bould_plat_100.png, bould_plat_140.png, bould_plat_265.png, cave_plat_40.png, cave_plat_100.png, cave_plat_140.png, cave_plat_265.png, cave1.png, cave2.png, cave3.png, cave4.png, enemy1.png"], function() {
       Crafty.scene("title"); //when everything is loaded, run the main scene
     });
     
@@ -52,8 +52,8 @@ playerJump = 7;
   
   Crafty.scene("title", function() {
   	  Crafty.e("2D, DOM, Text").attr({w: 1000, h: 20, x: 0, y: 120})
-	      .text("Game Title")
-	      .css({"text-align": "center", "color":"#000", "font-family":"VT323"});
+	      .text("Long Lost")
+	      .css({"text-align": "center", "color":"#000", "font-family":"VT323", "font-size":"64px"});
 	  Crafty.e("2D, DOM, Text").attr({w: 1000, h: 20, x: 0, y: 420})
 	      .text("PRESS SPACE TO CONTINUE")
 	      .css({"text-align": "center", "color":"#000", "font-family":"VT323", "font-size":"36px"})
@@ -356,10 +356,9 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision")
 					tranny_color1 = 'rgb(255,255,255)';
 					tranny1.color(tranny_color1);
 					point1 = true;
-					playerSpeed = 8;
-					playerJump = 6;
-					console.log(playerJump);
-					sherwood.twoway(playerSpeed, -3);
+					playerSpeed = 6;
+					playerJump = -1;
+					sherwood.twoway(playerSpeed, playerJump);
 					Crafty.audio.play("level1", -1);
 					Crafty.audio.stop("start");
 					bg.image("cave2.png", "repeat");
@@ -372,8 +371,9 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision")
 					tranny_color2 = 'rgb(255,255,255)';
 					tranny2.color(tranny_color2);
 					point2 = true;
-					playerSpeed = 6;
-					playerJump = 4;
+					playerSpeed = 3;
+					playerJump = -2;
+					sherwood.twoway(playerSpeed, playerJump);
 					Crafty.audio.stop("level1");
 					Crafty.audio.play("level2", -1);
 					bg.image("cave3.png", "repeat");
@@ -386,8 +386,9 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision")
 					tranny_color3 = 'rgb(255,255,255)';
 					tranny3.color(tranny_color3);
 					point3 = true;
-					playerSpeed = 4;
-					playerJump = 2;
+					playerSpeed = 1;
+					playerJump = -1;
+					sherwood.twoway(playerSpeed, playerJump);
 					Crafty.audio.stop("level2");
 					Crafty.audio.play("level3", -1);
 					Crafty.audio.play("breathing", -1);
