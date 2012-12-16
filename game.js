@@ -251,8 +251,7 @@ playerJump = 7;
 	    .onHit("Player", function(obj){
 		    hit = true;
 	    });
-
-var hazard = createHazard('rgb(255,0,0)',500,450,150,20);	    
+    
  //-------------Platform---------------------//   
 var platform1 = createPlatform('rgb(0,255,0)',500,300,140,20);
 var platform2 = createPlatform('rgb(0,255,0)',850,170,140,20);
@@ -281,24 +280,35 @@ var platform23 = createPlatform('rgb(0,255,0)',10625,260,265,20);
 var enemy1 = createEnemy('ud', 200, 'rgb(255,0,0)',1940,230,40,40);
 var enemy2 = createEnemy('ud', 200, 'rgb(255,0,0)',2360,320,40,40);
 var enemy3 = createEnemy('ud', 200, 'rgb(255,0,0)',2610,320,40,40);
-var enemy4 = createEnemy('ud', 200, 'rgb(255,0,0)',3370,320,40,40);
-var enemy5 = createEnemy('ud', 330, 'rgb(255,0,0)',3500,270,40,40);
-var enemy6 = createEnemy('ud', 200, 'rgb(255,0,0)',3620,320,40,40);
+var enemy4 = createEnemy('ud', 200, 'rgb(255,0,0)',3330,300,40,40);
+var enemy5 = createEnemy('ud', 330, 'rgb(255,0,0)',3485,270,40,40);
+var enemy6 = createEnemy('ud', 200, 'rgb(255,0,0)',3640,300,40,40);
 var enemy7 = createEnemy('lr', 200, 'rgb(255,0,0)',4170,395,40,40);
 var enemy8 = createEnemy('ud', 150, 'rgb(255,0,0)',4310,220,40,40);
-var enemy9 = createEnemy('ud', 200, 'rgb(255,0,0)',4800,320,40,40);
+var enemy9 = createEnemy('ud', 200, 'rgb(255,0,0)',4800,280,40,40);
 var enemy10 = createEnemy('ud', 200, 'rgb(255,0,0)',5410,90,40,40);
-var enemy11 = createEnemy('ud', 100, 'rgb(255,0,0)',6410,390,40,40);
-var enemy12 = createEnemy('ud', 200, 'rgb(255,0,0)',6530,330,40,40);
-var enemy13 = createEnemy('ud', 300, 'rgb(255,0,0)',6650,230,40,40);
-var enemy14 = createEnemy('ud', 100, 'rgb(255,0,0)',6650,390,40,40);
+var enemy11 = createEnemy('ud', 100, 'rgb(255,0,0)',6390,390,40,40);
+var enemy12 = createEnemy('ud', 200, 'rgb(255,0,0)',6515,330,40,40);
+var enemy13 = createEnemy('ud', 300, 'rgb(255,0,0)',6640,230,40,40);
+var enemy14 = createEnemy('ud', 100, 'rgb(255,0,0)',6645,390,40,40);
 var enemy15 = createEnemy('ud', 200, 'rgb(255,0,0)',6780,330,40,40);
 var enemy16 = createEnemy('ud', 300, 'rgb(255,0,0)',6910,240,40,40);
-var enemy17 = createEnemy('ud', 100, 'rgb(255,0,0)',6910,390,40,40);
-var enemy18 = createEnemy('ud', 200, 'rgb(255,0,0)',7030,330,40,40);
+var enemy17 = createEnemy('ud', 100, 'rgb(255,0,0)',6925,390,40,40);
+var enemy18 = createEnemy('ud', 200, 'rgb(255,0,0)',7050,330,40,40);
 var enemy19 = createEnemy('ud', 300, 'rgb(255,0,0)',7960,270,40,40);
 var enemy20 = createEnemy('ud', 200, 'rgb(255,0,0)',9060,340,40,40);
 var enemy21 = createEnemy('ud', 200, 'rgb(255,0,0)',9720,340,40,40);
+//------------------Hazards---------------------//
+var hazard1 = createHazard('rgb(255,0,0)',260,440,140,20);
+var hazard2 = createHazard('rgb(255,0,0)',1110,440,140,20);
+var hazard3 = createHazard('rgb(255,0,0)',1700,440,465,20);
+var hazard4 = createHazard('rgb(255,0,0)',2445,440,140,20);
+var hazard5 = createHazard('rgb(255,0,0)',3850,440,140,20);
+var hazard6 = createHazard('rgb(255,0,0)',4745,440,140,20);
+var hazard7 = createHazard('rgb(255,0,0)',5200,440,350,20);
+var hazard8 = createHazard('rgb(255,0,0)',5900,440,290,20);
+var hazard9 = createHazard('rgb(255,0,0)',7675,440,580,20);
+var hazard10 = createHazard('rgb(255,0,0)',10355,440,645,20);
 		
 var tranny1 = Crafty.e("tranny1, 2D, DOM, Color, Collision")
 	.color(tranny_color1)
