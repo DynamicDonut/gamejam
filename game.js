@@ -330,28 +330,28 @@ var hazard10 = createHazard('rgb(255,0,0)',10355,440,645,20);
 var tranny1 = Crafty.e("tranny1, 2D, DOM, Color, Collision, on, off, SpriteAnimation")
 	.color(tranny_color1)
 	.attr({x: 2830, y: 110, w: 36, h: 60})
-	.animate('off', 0, 0, 2)
+	.animate('off', [[0,0],[0,0],[0,0],[0,0],[1,0],[1,0],[1,0],[1,0],[2,0],[2,0],[2,0],[2,0]])
 	.animate('off', 6, -1)
 	.collision();
 
 var tranny2 = Crafty.e("tranny2, 2D, DOM, Color, Collision, on, off, SpriteAnimation")
 	.color(tranny_color2)
 	.attr({x: 5585, y: 180, w: 36, h: 60})
-	.animate('off', 0, 0, 2)
+	.animate('off', [[0,0],[0,0],[0,0],[0,0],[1,0],[1,0],[1,0],[1,0],[2,0],[2,0],[2,0],[2,0]])
 	.animate('off', 3, -1)
 	.collision();
 
 var tranny3 = Crafty.e("tranny3, 2D, DOM, Color, Collision, on, off, SpriteAnimation")
 	.color(tranny_color3)
 	.attr({x: 8300, y: 400, w: 36, h: 60})
-	.animate('off', 0, 0, 2)
+	.animate('off', [[0,0],[0,0],[0,0],[0,0],[1,0],[1,0],[1,0],[1,0],[2,0],[2,0],[2,0],[2,0]])
 	.animate('off', 3, -1)
 	.collision();
 	
 var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision, on, off, SpriteAnimation")
 	.color(tranny_color4)
 	.attr({x: 10780, y: 200, w: 36, h: 60})
-	.animate('off', 0, 0, 2)
+	.animate('off', [[0,0],[0,0],[0,0],[0,0],[1,0],[1,0],[1,0],[1,0],[2,0],[2,0],[2,0],[2,0]])
 	.animate('off', 3, -1)
 	.collision();
 	    
@@ -404,7 +404,7 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision, on, off, SpriteAnima
 					Crafty.audio.stop("start");
 					bg.image("cave2.png", "repeat");
 					animate = 1;
-					tranny1.stop().animate('on', 0, 1, 2);
+					tranny1.stop().animate('on', [[0,1],[0,1],[0,1],[0,1],[1,1],[1,1],[1,1],[1,1],[2,1],[2,1],[2,1],[2,1]]);
 					tranny1.animate('on', 2, -1);
 				}
 			});
@@ -422,7 +422,7 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision, on, off, SpriteAnima
 					Crafty.audio.play("level2", -1);
 					bg.image("cave3.png", "repeat");
 					animate = 2;
-					tranny2.stop().animate('on', 0, 1, 2);
+					tranny1.stop().animate('on', [[0,1],[0,1],[0,1],[0,1],[1,1],[1,1],[1,1],[1,1],[2,1],[2,1],[2,1],[2,1]]);
 					tranny2.animate('on', 2, -1);
 				}
 			});
@@ -441,7 +441,7 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision, on, off, SpriteAnima
 					Crafty.audio.play("breathing", -1);
 					bg.image("cave4.png", "repeat");
 					animate = 3;
-					tranny3.stop().animate('on', 0, 1, 2);
+					tranny1.stop().animate('on', [[0,1],[0,1],[0,1],[0,1],[1,1],[1,1],[1,1],[1,1],[2,1],[2,1],[2,1],[2,1]]);
 					tranny3.animate('on', 2, -1);
 				}
 			});
@@ -455,7 +455,7 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision, on, off, SpriteAnima
 					Crafty.audio.stop("level3");
 					Crafty.audio.stop("breathing");
 					Crafty.audio.play("level4", -1);
-					tranny4.stop().animate('on', 0, 1, 2);
+					tranny1.stop().animate('on', [[0,1],[0,1],[0,1],[0,1],[1,1],[1,1],[1,1],[1,1],[2,1],[2,1],[2,1],[2,1]]);
 					tranny4.animate('on', 2, -1);
 				} 
 			});
