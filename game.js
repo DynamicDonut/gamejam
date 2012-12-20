@@ -361,8 +361,8 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision, on, off, SpriteAnima
 	            dX: Crafty.math.randomInt(2, 5), 
 	            dY: Crafty.math.randomInt(2, 5) })
 	    .bind("NewDirection", function (direction) {
-	   			if ((direction.x < 0) && (!this.isPlaying('walkleft') || !this.isPlaying('walkleft1') || !this.isPlaying('walkleft2') || !this.isPlaying('walkleft3'))) this.stop().animate(lft, 0, -1);
-	   			if ((direction.x > 0) && (!this.isPlaying('walkright') || !this.isPlaying('walkright1') || !this.isPlaying('walkright2') || !this.isPlaying('walkright3'))) this.stop().animate(rt, 0, -1);
+	   			if ((direction.x < 0) && (!this.isPlaying('walkleft') || !this.isPlaying('walkleft1') || !this.isPlaying('walkleft2') || !this.isPlaying('walkleft3'))) this.stop().animate(lft, 9, -1);
+	   			if ((direction.x > 0) && (!this.isPlaying('walkright') || !this.isPlaying('walkright1') || !this.isPlaying('walkright2') || !this.isPlaying('walkright3'))) this.stop().animate(rt, 9, -1);
 		        if(!direction.x && !direction.y) {
 		            this.stop();
 		        }
@@ -422,7 +422,7 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision, on, off, SpriteAnima
 					Crafty.audio.play("level2", -1);
 					bg.image("cave3.png", "repeat");
 					animate = 2;
-					tranny1.stop().animate('on', [[0,1],[0,1],[0,1],[0,1],[1,1],[1,1],[1,1],[1,1],[2,1],[2,1],[2,1],[2,1]]);
+					tranny2.stop().animate('on', [[0,1],[0,1],[0,1],[0,1],[1,1],[1,1],[1,1],[1,1],[2,1],[2,1],[2,1],[2,1]]);
 					tranny2.animate('on', 2, -1);
 				}
 			});
@@ -441,7 +441,7 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision, on, off, SpriteAnima
 					Crafty.audio.play("breathing", -1);
 					bg.image("cave4.png", "repeat");
 					animate = 3;
-					tranny1.stop().animate('on', [[0,1],[0,1],[0,1],[0,1],[1,1],[1,1],[1,1],[1,1],[2,1],[2,1],[2,1],[2,1]]);
+					tranny3.stop().animate('on', [[0,1],[0,1],[0,1],[0,1],[1,1],[1,1],[1,1],[1,1],[2,1],[2,1],[2,1],[2,1]]);
 					tranny3.animate('on', 2, -1);
 				}
 			});
@@ -455,7 +455,7 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision, on, off, SpriteAnima
 					Crafty.audio.stop("level3");
 					Crafty.audio.stop("breathing");
 					Crafty.audio.play("level4", -1);
-					tranny1.stop().animate('on', [[0,1],[0,1],[0,1],[0,1],[1,1],[1,1],[1,1],[1,1],[2,1],[2,1],[2,1],[2,1]]);
+					tranny4.stop().animate('on', [[0,1],[0,1],[0,1],[0,1],[1,1],[1,1],[1,1],[1,1],[2,1],[2,1],[2,1],[2,1]]);
 					tranny4.animate('on', 2, -1);
 				} 
 			});
