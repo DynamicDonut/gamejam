@@ -6792,7 +6792,7 @@ Crafty.c("Twoway", {
 	* @see Gravity, Fourway
 	*/
 	twoway: function (speed, jump) {
-
+		
 		this.multiway(speed, {
 			RIGHT_ARROW: 0,
 			LEFT_ARROW: 180,
@@ -6807,10 +6807,8 @@ Crafty.c("Twoway", {
 		this.bind("EnterFrame", function () {
 			if (this.disableControls) return;
 			if (this._up) {
-/* 				this._movement.y = -jump; */
 				this.y -= jump;
 				this._falling = true;
-/* 				this.trigger('Moved', { x: this._x, y: this._y+jump }); */
 			}
 		}).bind("KeyDown", function () {
 			if (this.isDown("UP_ARROW") || this.isDown("W") || this.isDown("Z")) this._up = true;

@@ -388,7 +388,8 @@ var tranny4 = Crafty.e("tranny4, 2D, DOM, Color, Collision, on, off, SpriteAnima
 		.onHit('platform',function(ent){
 		var target = ent[0]; //get the object of the collided EntityReference
 		if(this.y>target.obj._y){
-			this.y = target.obj._y+target.obj._h;
+			this.y = target.obj._y+target.obj._h+playerJump;
+			this._up = false;
 		}
 	})
 		.onHit('tranny1', function(ent){
